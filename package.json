@@ -1,0 +1,15 @@
+{
+  "name": "coderbackend",
+  "version": "1.0.0",
+  "description": "Entregas curso Coder Backend",
+  "main": "entrega03.js",
+  "scripts": {
+    "start": "node ./src/entrega03.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guillermo Ballester",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Legion 5 Gen 6 (15” AMD) Gaming Laptop",
+		"price": 879.99,
+		"thumbnail": "https://p1-ofp.static.pub/fes/cms/2022/03/30/2xkqg1c6ig883erp9az9sat6esuy7f575094.png",
+		"id": 1
+	},
+	{
+		"name": "Yoga 7i (15”) 2 in 1 Laptop",
+		"price": 799.99,
+		"thumbnail": "https://p2-ofp.static.pub/fes/cms/2022/03/16/n9p917hnlg00xzre6zo6stc4ahaehg099985.png",
+		"id": 2
+	},
+	{
+		"name": "ThinkPad P17 Gen 2 (17” Intel) Mobile Workstation",
+		"price": 1640.82,
+		"thumbnail": "https://p4-ofp.static.pub/fes/cms/2022/03/21/g90t9kiuzxbfmnt4ojmq578tydngmr042079.png",
+		"id": 3
+	}
+]
