@@ -1,23 +1,9 @@
 const fs = require("fs");
 
-class Container {
-  
+class ProductContainer {
   constructor(fileName) {
     this.fileName = fileName;
   }
-
-  // //obtain the max id number used in the file
-  // async getMaxId() {
-  //   try {
-  //     const products = this.GetAll();
-  //     //const maxId = Math.max.apply(null, products.map(p => p.id));
-  //     const maxId = Math.max(...products);
-  //     console.log("maxId", maxId);
-  //     return maxId;
-  //   } catch {
-  //     return 0;
-  //   }
-  // }
 
   async save(product) {
     try {
@@ -32,6 +18,8 @@ class Container {
           null,
           products.map((p) => p.id)
         ) + 1;
+      //lo parseo porque cuando llega del formulario vinen como string
+      product.price = parseFloat(product.price);
       products.push(product);
       await fs.promises.writeFile(
         this.fileName,
@@ -43,19 +31,48 @@ class Container {
     }
   }
 
+  async updateById(id, product) {
+    try {
+      console.log("entro put funcion");
+      console.log(id);
+      console.log(product);
+      const products = await this.getAll();
+      const position = products.findIndex(
+        (p) => parseInt(p.id) == parseInt(id)
+      );
+      console.log(position);
+      if (position >= 0) {
+        products[position] = product;
+        products[position].price = parseFloat(product.price);
+        products[position].id = parseInt(id);
+        await fs.promises.writeFile(
+          this.fileName,
+          JSON.stringify(products, null, "\t")
+        );
+        return product;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      return null;
+    }
+  }
+
   async getAll() {
     try {
       const content = await fs.promises.readFile(this.fileName);
       return JSON.parse(content);
     } catch (error) {
-      return [];
+      return {
+        error: error,
+      };
     }
   }
 
   async getByID(id) {
     try {
       const products = await this.getAll();
-      const product = products.find((p) => p.id == id);
+      const product = products.find((p) => parseInt(p.id) == parseInt(id));
       return product;
     } catch (error) {
       return null;
@@ -72,7 +89,7 @@ class Container {
         this.fileName,
         JSON.stringify(productsFiltered, null, "\t")
       );
-      return "product deleted";
+      return { status: "product deleted", id: id };
     } catch (error) {
       return error;
     }
@@ -101,4 +118,4 @@ class Container {
   }
 }
 
-module.exports = Container;
+module.exports = ProductContainer;

@@ -2,9 +2,9 @@
   "name": "coderbackend",
   "version": "1.0.0",
   "description": "Entregas curso Coder Backend",
-  "main": "entrega03.js",
+  "main": "entrega04.js",
   "scripts": {
-    "start": "node ./src/entrega03.js",
+    "start": "nodemon ./src/entrega04.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Guillermo Ballester",
