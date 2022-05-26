@@ -1,0 +1,15 @@
+html 
+    head
+        title Ejercicio PUG
+    body
+        h1= title
+        form(action="/api/products" method="POST")
+            p name:
+            input(type="text" name="name" placeholder="Enter product name ")
+            p price:
+            input(type="number" step="0.01"  name="price"  placeholder="Product price")
+            p thumbnail:
+            input(type="text" name="thumbnail" placeholder="Product thumbnail")
+            input(type="submit")
+        a(href="/api/products") Go to Products
+

@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+
+    <form  action="/api/products" method="post">
+        <div class="form-group">
+          <label for="name">Products Name</label>
+          <input type="text"  name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter product name">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" step="0.01"  name="price" class="form-control" id="price" placeholder="Product price">
+        </div>
+        <div class="form-group">
+            <label for="imageURL">URL Image</label>
+            <input type="text" name="thumbnail" class="form-control" id="imageURL" placeholder="Image URL">
+          </div>
+        <div class="form-check">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-outline-info"><a  href="/api/products">View Products</a></button>
+      </form>

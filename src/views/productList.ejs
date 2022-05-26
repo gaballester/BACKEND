@@ -1,0 +1,29 @@
+<%- include('template/head') %>
+
+<h1><%= title %></h1>
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Thumbnail</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% products.forEach(function(product) { %>
+    <tr>
+      <th scope="row"><%= product.id %></th>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.thumbnail %></td>
+      <td><img style="width: 30px; height:30px" src="<%=product.thumbnail%>" alt=""></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<button class="btn btn-outline-info"><a  href="/api">Add Product</a></button>
+<%- include('template/footer'); %>

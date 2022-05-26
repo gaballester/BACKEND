@@ -1,0 +1,51 @@
+    <h1>{{title}} </h1>
+
+       {{!-- <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Thumbnail</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tr>
+            <tbody>
+                {{#each products}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                        <td>{{thumbnail}}</td>
+                        <td><img style="width: 30px; height:30px" src="{{thumbnail}}" alt=""></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <a href="http://localhost:8080/api/"> Add Products555</a> --}}
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Thumbnail</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+
+  <tbody>
+     {{#each products}}
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{name}}</td>
+      <td>{{price}}</td>
+      <td>{{thumbnail}}</td>
+      <td><img style="width: 30px; height:30px" src="{{thumbnail}}" alt=""></td>
+    </tr>
+     {{/each}}
+  </tbody>
+</table>
+<button class="btn btn-outline-info"><a  href="/api">Add Product</a></button>

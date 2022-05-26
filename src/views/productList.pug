@@ -1,0 +1,26 @@
+html 
+    head
+        title Ejercicio PUG
+    body
+
+        h1=title 
+
+        table
+            thead
+                tr
+                    th Product Name
+                    th Product Price
+                    th Product Thumbnail
+                    th Image
+            tbody
+                each product in products 
+                    tr
+                        td= product.name
+                        td= product.price
+                        td= product.thumbnail
+                        td
+                                img(style="width: 30px; height:30px" src=product.thumbnail)
+
+    a(href="http://localhost:8080/api/") Add Products
+
+

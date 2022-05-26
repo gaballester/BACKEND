@@ -7,7 +7,8 @@ const productObject = new productsClass('./data/products.json');
 productsRouter.get("/", async (req, res) => {
     try {
         const products = await productObject.getAll();
-        res.json(products);
+        //res.json(products);
+        res.render('productList',{pageTitle: 'ProductListPage', title: 'Products List', products: products});
     } catch (error) {
         res.json({
             error: 'error al obtener los productos'
@@ -29,8 +30,8 @@ productsRouter.get("/:id", (req, res) => {
 
 productsRouter.post("/", (req, res) => {
     try {
-        productObject.save(req.body).then((result) => {
-            res.json({"Product id": result});
+         productObject.save(req.body).then((result) => {
+            res.json({"Add new Product with id": result});
         });       
     }
     catch (error) {
